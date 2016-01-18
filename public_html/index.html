@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Game Prototype</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="header">Header</div>
+        
+        <table class="MainEnvelope">
+            <tr>
+                <td class="midTD">
+                    <div class="middle">
+                        <table class="Buttons">
+                            <tr>
+                                <td>
+                                    <span class="button" onclick="GatherOre()">Mine Ore</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                
+                <td class="rightTD">
+                    <div class="right" id="log">
+                        <div class="DateAndTime">
+                            <span class="Date" id="month"></span>, 
+                            <span class="Date" id="year"></span> A.C.
+                        </div>
+                        
+                        <hr>
+
+                        <div class="clearLog"><a href="#">Clear Log</a></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="bottomRow" colspan="2">
+                    <div class="left" id="left">
+                        <table class="resources">
+                            <tr>
+                                <span class="resourceHeading"><u>Building Materials</u></span>
+                            </tr>
+                            <tr>
+                                <td>Unrefined Ore:</td>
+                                <td id="Ore"></td>
+                                <td id="OrePerSec"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <div class="footer">Footer</div>
+
+        <script src="Utility.js"></script>
+        <script src="Main.js"></script>
+    </body>
+</html>
