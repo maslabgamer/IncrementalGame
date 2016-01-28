@@ -15,11 +15,10 @@ function valueChanged() {
     var ancestor = document.getElementById("middle"),
             descendants = ancestor.getElementsByTagName('*');
     
-    var e, d;
+    var e, checkbox = document.getElementById("hide_finished").checked;
     for(var i = 0; i < descendants.length; ++i) {
         e = descendants[i];
-        if (e.innerHTML.indexOf("(Completed)") >= 0 && 
-                document.getElementById("hide_finished").checked === true)
+        if (e.innerHTML.indexOf("(Completed)") >= 0 && checkbox === true)
             e.style.display = "none";
         else
             e.style.display = "inline-block";
