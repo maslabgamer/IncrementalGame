@@ -10,3 +10,18 @@ function getCookie(name) {
     var parts = value.split("; " + name + "=");
     if (parts.length === 2) return parts.pop().split(";").shift();
 }
+
+function valueChanged() {
+    var ancestor = document.getElementById("middle"),
+            descendants = ancestor.getElementsByTagName('*');
+    
+    var e, d;
+    for(var i = 0; i < descendants.length; ++i) {
+        e = descendants[i];
+        if (e.innerHTML.indexOf("(Completed)") >= 0 && 
+                document.getElementById("hide_finished").checked === true)
+            e.style.display = "none";
+        else
+            e.style.display = "inline-block";
+    }
+}
