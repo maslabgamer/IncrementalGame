@@ -7,6 +7,12 @@ function GatherOre() {
     document.getElementById("Ore").innerHTML = parseInt(document.getElementById("Ore").innerHTML) + 1;
 }
 
+function build_building(to_build) {
+    var current_amount = document.getElementById(to_build + "_amount");
+    
+    
+}
+
 function GameTime() {
     var MonthAndDay = document.getElementById("month").innerHTML.split("-");
     var year = parseInt(document.getElementById("year").innerHTML);
@@ -36,9 +42,6 @@ function ResourceCollection() {
 }
 
 function saveGame() {
-//    var currentDateTime = new Date();
-//    currentDateTime.setMonth(currentDateTime.getMonth() + 24);
-    
     for (var i = 0; i < Resources.length; ++i) {
         localStorage.setItem(Resources[i], document.getElementById(Resources[i]).innerHTML);
     }

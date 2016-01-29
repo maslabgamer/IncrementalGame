@@ -11,11 +11,11 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
-function valueChanged() {
-    var ancestor = document.getElementById("middle"),
+function valueChanged(tab) {
+    var ancestor = document.getElementById(tab),
             descendants = ancestor.getElementsByTagName('*');
     
-    var e, checkbox = document.getElementById("hide_finished").checked;
+    var e, checkbox = document.getElementById(tab + "_hide_finished").checked;
     for(var i = 0; i < descendants.length; ++i) {
         e = descendants[i];
         if (e.innerHTML.indexOf("(Completed)") >= 0 && checkbox === true)

@@ -6,6 +6,9 @@
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="header">Header</div>
@@ -14,21 +17,23 @@
             <tr>
                 <td class="midTD">
                     <div class="middle" id="middle">
-                        <input type="checkbox" id="hide_finished" onchange="valueChanged()">Hide the test button<br>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button">This is a test button. (Completed)</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore (Completed)</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
-                        <span class="button" onclick="GatherOre()">Mine Ore</span>
+                        <ul class="nav nav-tabs">
+                            <li class="active my_tabs"><a data-toggle="tab" href="#main_buildings">Buildings</a></li>
+                            <li class="my_tabs"><a data-toggle="tab" href="#research">Science Lab</a></li>
+                        </ul>
+                        
+                        <div class="tab-content">
+                            <div id="main_buildings" class="tab-pane fade in active">
+                                <input type="checkbox" id="main_buildings_hide_finished" onchange="valueChanged('main_buildings')">Hide the test button<br>
+                                <span class="button" onclick="GatherOre()">Mine Ore</span>
+                                <span class="button" id="Extractor" onclick="build_building('Extractor')">Extractor (<span id="Extractor_amount">0</span>)</span>
+                            </div>
+                            <div id="research" class="tab-pane fade in">
+                                <input type="checkbox" id="research_hide_finished" onchange="valueChanged('research')">Hide the test button<br>
+                                <span class="button">Research tab</span>
+                                <span class="button">Research tab (Completed)</span>
+                            </div>
+                        </div>
                     </div>
                 </td>
                 
